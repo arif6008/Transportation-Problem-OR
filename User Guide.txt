@@ -1,0 +1,150 @@
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%
+%Please use the following matlab commands to check each method:
+% A= cost matrix
+% SVec=supply vector
+% DVec=demand vector
+
+%++++++North West Corner Method Example-1 Commands++++++++
+A=[4 6 8 8;6 8 6 7;5 7 6 8];
+SVec=[40 60 50];
+DVec=[20 30 50 50];
+North_West_Corner(A,DVec,SVec)
+
+%++++++North West Corner Method Example-2 Commands++++++++
+A=[11 13 17 14;16 18 14 10;21 24 13 10];
+SVec=[250 300 400];
+DVec=[200 225 275 250];
+North_West_Corner(A,DVec,SVec)
+
+%++++++Minimum Cost Method Example-1 Commands++++++++
+A=[4 6 8 8;6 8 6 7;5 7 6 8];
+SVec=[40 60 50];
+DVec=[20 30 50 50];
+Least_Cost(A,DVec,SVec)
+
+%++++++Minimum Cost Method Example-2 Commands++++++++
+A=[11 13 17 14;16 18 14 10;21 24 13 10];
+SVec=[250 300 400];
+DVec=[200 225 275 250];
+Least_Cost(A,DVec,SVec)
+
+%++++++VOGEL Approximation Example-1 Commands++++++++
+A=[4 6 8 8;6 8 6 7;5 7 6 8];
+SVec=[40 60 50];
+DVec=[20 30 50 50];
+VAM(A,DVec,SVec)
+
+%++++++VOGEL Approximation Example-2 Commands++++++++
+A=[11 13 17 14;16 18 14 10;21 24 13 10];
+SVec=[250 300 400];
+DVec=[200 225 275 250];
+VAM(A,DVec,SVec)
+
+%++++++MODI Method Example-1 Commands+++++++++++++++
+x=[20 20 0 0;0 0 50 10;0 10 0 40];
+A=[4 6 8 8;6 8 6 7;5 7 6 8];
+MODI(A,x)
+
+%++++++MODI Method Example-2 Commands+++++++++++++++
+A=[11 13 17 14;16 18 14 10;21 24 13 10];
+x=[200 50 0 0;0 175 0 125;0 0 275 125];
+MODI(A,x)
+
+%++++++Stepping Stone Method Example-1 Commands+++++++++++++++
+x=[20 20 0 0;0 0 50 10;0 10 0 40];
+A=[4 6 8 8;6 8 6 7;5 7 6 8];
+SSM(A,x)
+
+%++++++Stepping Stone Method Example-2 Commands+++++++++++++++
+A=[11 13 17 14;16 18 14 10;21 24 13 10];
+x=[200 50 0 0;0 175 0 125;0 0 275 125];
+SSM(A,x)
+
+%++++++Degeneration Solution Example-1 Commands+++++++++++++++
+A=[4 6 8 8;6 8 6 7;5 7 6 8];
+x=[20 20 0 0;0 10 50 0;0 0 0 50];
+MODI_Degen(A,x)
+
+%++++++Unbalanced Class Example Commands+++++++++++++++
+A=[2 1 3 4 5 5;3 2 2 3 4 5;2 2 1 2 3 3;5 5 4 3 2 2];
+SVec=[4 5 6 9];
+DVec=[2 3 3 6 4 3];
+Least_Cost(A,DVec,SVec)
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%
+%Please run the following file to execute the complete program in Matlab:
+
+Transportation_Project1.m
+
+
+%%
+
+
+
+
+%++++++VOGEL Approximation HW-1 Balanced Case Commands++++++++
+A=[4 7 5 4;6 6 8 5;8 4 6 3;6 5 8 5];
+SVec=[30 60 40 25];
+DVec=[20 40 55 40];
+VAM(A,DVec,SVec)
+
+
+%MODI for HW-1:
+A=[4 7 5 4;6 6 8 5;8 4 6 3;6 5 8 5];
+x=[20     0     0    10;0    15    15    30;0     0    40     0;0    25     0     0]
+MODI(A,x)
+
+%++++++VOGEL Approximation HW-1 Unbalanced Case Commands++++++++
+A=[4 7 5 4;6 6 8 5;8 4 6 3];
+SVec=[30 60 40];
+DVec=[20 40 10 40];
+VAM(A,DVec,SVec)
+
+%++++++Degeneration Solution Exercise Commands+++++++++++++++
+A=[4 7 5 4;6 6 8 5;8 4 6 3];
+x=[20 0 10 0;0 0 0 40;0 40 0 0];
+MODI_Degen(A,x)
+
+
+
+Another Arbitary Example:
+
+A=[4 7 5 4;6 6 8 5;8 4 6 3;8 7 9 2];
+SVec=[30 60 40 20];
+DVec=[20 40 10 40];
+VAM(A,DVec,SVec)
+
+
+x=[20     0    10     0;0     0     0    20;0    40     0     0;0     0     0    20]
+MODI_Degen(A,x)
+
+
+
+
+%%%Website can't solve but my program can solve
+
+A=[4 7 5 4 8 2;6 6 8 5 6 3;8 4 6 3 5 7;8 7 9 2 9 1];
+SVec=[30 60 40 20];
+DVec=[20 30 10 30 20 20];
+VAM(A,DVec,SVec)
+
+
+A=[4 7 5 4 8 2;6 6 8 5 6 3;8 4 6 3 5 7;8 7 9 2 9 1];
+x=[10 0 0 0 0 20;10 0 10  0 20  0;0 30  0 10  0  0;0  0  0 20  0  0]
+MODI_Degen(A,x)
+
+
+
+A=[9 3 8 1 4 3 6;9 7 3 8 4 3 6;4 5 4 8 5 6 2;7 4 5 4 5 2 4]
+x=[0 26 0 27 0 0 0;0 0 40 0 3 0 0;22 0 0 0  0 0 25;0 1 0 0 17 20 15]
+MODI(A,x)
+
+
+A=[6 4 9 1;20 6 11 3;7 1 0 4;7 1 12 6]
+SVec=[40 40 50 90]
+DVec=[90 30 50 30]
+VAM(A,DVec,SVec)
+
+x=[30 0 0 10;0 0 0 20;0 0 50 0;60 30 0 0]
